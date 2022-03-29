@@ -1,0 +1,72 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Tomaz Tomazic"><link rel="shortcut icon" type=image/x-icon href=https://www.tomazic.pro/img/favicon.ico><title>Debugging C/C++ code in Visual Studio Code (VSC) | Tomaz Tomazic</title><meta name=description content="VSC setup for competitive programming"><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl crossorigin=anonymous><link rel="preload stylesheet" href=/css/main.min.css as=style><link rel=stylesheet type=text/css href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet type=text/css href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old"><!--[if lt IE 9]><script src=https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js></script><script src=https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js></script><![endif]--><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','G-LQJ8L15S31','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><div id=content><div class="container mb-3"><nav class="navbar navbar-expand-lg"><div class=container-fluid><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbar aria-controls=navbar>
+<i class="fa fa-bars"></i></button><div id=navbar class="collapse navbar-collapse"><ul class="navbar-nav ms-auto mb-2 mb-lg-0"><li class=nav-item><li><a class=nav-link href=/blog/>BLOG</a></li></li><li class=nav-item><li><a class=nav-link href=/resume/>RESUME</a></li></li></ul></div></div></div></nav><div class=container><h3 class=mt-3><b><a href=https://www.tomazic.pro/blog/debugging-vscode-cpp/>Debugging C/C++ code in Visual Studio Code (VSC)</a></b></h3><div class="blog-title my-4"></div><div class=panel><div class=panel-body><div class=blogpost><p>I’ve been occupied with competitive programing a lot lately. For writing code I use Visual Studio Code because I am used to it from javascript and python world.
+To test code I write given input from competition task to in.txt file and then run custom task build.</p><h1 id=steps-needed-for-runningdebugging>Steps needed for running/debugging:</h1><h2 id=1-install-cc-extension>1. install C/C++ extension.</h2><p><a href=https://code.visualstudio.com/docs/languages/cpp>https://code.visualstudio.com/docs/languages/cpp</a></p><h2 id=2-define-task-to-build-code>2. Define task to build code.</h2><p>Go to <code>Tasks > Configure tasks</code> and choose your task to edit or create new one.</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=color:#000;font-weight:700>{</span>
+  <span style=color:#204a87;font-weight:700>&#34;_comment&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;
+</span><span style=color:#4e9a06>    // See https://go.microsoft.com/fwlink/?LinkId=733558
+</span><span style=color:#4e9a06>    // for the documentation about the tasks.json format
+</span><span style=color:#4e9a06>  &#34;</span><span style=color:#000;font-weight:700>,</span>
+  <span style=color:#204a87;font-weight:700>&#34;version&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;2.0.0&#34;</span><span style=color:#000;font-weight:700>,</span>
+  <span style=color:#204a87;font-weight:700>&#34;tasks&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>[</span>
+    <span style=color:#000;font-weight:700>{</span>
+      <span style=color:#204a87;font-weight:700>&#34;label&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;build &amp; run&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;type&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;shell&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;command&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;g++ program.cpp -std=c++14 -o program.out &amp;&amp; time ./program &lt; in.txt&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;group&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>{</span>
+        <span style=color:#204a87;font-weight:700>&#34;kind&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;build&#34;</span><span style=color:#000;font-weight:700>,</span>
+        <span style=color:#204a87;font-weight:700>&#34;isDefault&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#204a87;font-weight:700>true</span>
+      <span style=color:#000;font-weight:700>}</span>
+    <span style=color:#000;font-weight:700>},</span>
+    <span style=color:#000;font-weight:700>{</span>
+      <span style=color:#204a87;font-weight:700>&#34;label&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;build &amp; debug&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;type&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;shell&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;command&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;g++ program.cpp -std=c++14 -g -o program.out&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;group&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>{</span>
+        <span style=color:#204a87;font-weight:700>&#34;kind&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;build&#34;</span><span style=color:#000;font-weight:700>,</span>
+        <span style=color:#204a87;font-weight:700>&#34;isDefault&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#204a87;font-weight:700>true</span>
+      <span style=color:#000;font-weight:700>}</span>
+    <span style=color:#000;font-weight:700>}</span>
+  <span style=color:#000;font-weight:700>]</span>
+<span style=color:#000;font-weight:700>}</span>
+</code></pre></div><p>Make sure you have -g switch. This will allow you to debug code later.
+Now you should be able to build and run your code using:
+<code>ctrl + shift + b</code></p><h2 id=3-install-debugging-dependencies>3. Install debugging dependencies</h2><p>You need gdb and xTerm or gnome terminal. I am using deepin linux so I had to run</p><p><code>sudo apt-get install gdb xterm</code></p><h2 id=4-setup-debugging>4. Setup debugging</h2><p>Go to <code>Debug > open configurations</code></p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=color:#000;font-weight:700>{</span>
+   <span style=color:#204a87;font-weight:700>&#34;_comment&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;
+</span><span style=color:#4e9a06>        // Use IntelliSense to learn about possible attributes.
+</span><span style=color:#4e9a06>        // Hover to view descriptions of existing attributes.
+</span><span style=color:#4e9a06>        // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+</span><span style=color:#4e9a06>    &#34;</span><span style=color:#000;font-weight:700>,</span>
+    <span style=color:#204a87;font-weight:700>&#34;version&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;0.2.0&#34;</span><span style=color:#000;font-weight:700>,</span>
+  <span style=color:#204a87;font-weight:700>&#34;configurations&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>[</span>
+
+    <span style=color:#000;font-weight:700>{</span>
+      <span style=color:#204a87;font-weight:700>&#34;name&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;(gdb) Launch&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;type&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;cppdbg&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;request&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;launch&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;program&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;${workspaceFolder}/program.out&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;args&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>[</span>
+        <span style=color:#4e9a06>&#34;&lt;&#34;</span><span style=color:#000;font-weight:700>,</span>
+        <span style=color:#4e9a06>&#34;in.txt&#34;</span>
+      <span style=color:#000;font-weight:700>],</span>
+      <span style=color:#204a87;font-weight:700>&#34;stopAtEntry&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#204a87;font-weight:700>false</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;cwd&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;${workspaceFolder}&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;environment&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>[],</span>
+      <span style=color:#204a87;font-weight:700>&#34;externalConsole&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#204a87;font-weight:700>true</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;MIMode&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;gdb&#34;</span><span style=color:#000;font-weight:700>,</span>
+      <span style=color:#204a87;font-weight:700>&#34;setupCommands&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#000;font-weight:700>[</span>
+        <span style=color:#000;font-weight:700>{</span>
+          <span style=color:#204a87;font-weight:700>&#34;description&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;Enable pretty-printing for gdb&#34;</span><span style=color:#000;font-weight:700>,</span>
+          <span style=color:#204a87;font-weight:700>&#34;text&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;-enable-pretty-printing&#34;</span><span style=color:#000;font-weight:700>,</span>
+          <span style=color:#204a87;font-weight:700>&#34;ignoreFailures&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#204a87;font-weight:700>true</span>
+        <span style=color:#000;font-weight:700>}</span>
+      <span style=color:#000;font-weight:700>],</span>
+      <span style=color:#204a87;font-weight:700>&#34;preLaunchTask&#34;</span><span style=color:#000;font-weight:700>:</span> <span style=color:#4e9a06>&#34;build &amp; debug&#34;</span>
+    <span style=color:#000;font-weight:700>}</span>
+  <span style=color:#000;font-weight:700>]</span>
+<span style=color:#000;font-weight:700>}</span>
+</code></pre></div><p>Note the <code>args &lt; in.txt</code> which will allow you to redirect input file while debugging.</p><h2 id=thats-it>Thats it!</h2><p>You should be able to debug code now, by setting up breakpoints and hitting F5 or go to debug > start debugging</p></div><div class=blogpost__footer>September 8, 2018
+&nbsp;&nbsp;
+<span class="badge bg-success">competitive programming</span>
+<span class="badge bg-success">vscode</span>
+<span class="badge bg-success">debugging</span>
+<span class="badge bg-success">c++</span></div></div><div class=disqus><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"dcrystalj"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><footer class=footer><div class=container><div class=text-muted>&copy; All rights reserved 2022</div></div></footer><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js integrity=sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG crossorigin=anonymous></script></body></html>
