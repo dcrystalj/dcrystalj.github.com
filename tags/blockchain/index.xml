@@ -1,2 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>blockchain on dcrystalj</title><link>https://www.tomazic.pro/tags/blockchain/</link><description>Recent content in blockchain on dcrystalj</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Thu, 28 Oct 2021 22:29:06 +0200</lastBuildDate><atom:link href="https://www.tomazic.pro/tags/blockchain/index.xml" rel="self" type="application/rss+xml"/><item><title>How to become a blockchain developer — the first thing</title><link>https://www.tomazic.pro/blog/become_blockchaing_developer/</link><pubDate>Thu, 28 Oct 2021 22:29:06 +0200</pubDate><guid>https://www.tomazic.pro/blog/become_blockchaing_developer/</guid><description>tl;dr Blockchain A-Z™: Learn How To Build Your First Blockchain
-I passed some online courses and read a lot of resources to become blockchain developer, even 100x more expensive ones. The first thing you need is to get basic idea how blockchain works, what are its use cases and what are its limitations in order to understand documentation of blockchain you are interested in. Only after that you can develop smart contracts you need and Blockchain A-Z course will give you all of that: basic background and some idea about smart contracts on Etherium blockchain.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blockchain on dcrystalj</title>
+    <link>https://www.tomazic.pro/tags/blockchain/</link>
+    <description>Recent content in blockchain on dcrystalj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 28 Oct 2021 22:29:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.tomazic.pro/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to become a blockchain developer — the first thing</title>
+      <link>https://www.tomazic.pro/blog/become_blockchaing_developer/</link>
+      <pubDate>Thu, 28 Oct 2021 22:29:06 +0200</pubDate>
+      
+      <guid>https://www.tomazic.pro/blog/become_blockchaing_developer/</guid>
+      <description>tl;dr Blockchain A-Z™: Learn How To Build Your First Blockchain
+I passed some online courses and read a lot of resources to become blockchain developer, even 100x more expensive ones. The first thing you need is to get basic idea how blockchain works, what are its use cases and what are its limitations in order to understand documentation of blockchain you are interested in. Only after that you can develop smart contracts you need and Blockchain A-Z course will give you all of that: basic background and some idea about smart contracts on Etherium blockchain.</description>
+    </item>
+    
+  </channel>
+</rss>

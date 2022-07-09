@@ -1,2 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sub-select on dcrystalj</title><link>https://www.tomazic.pro/tags/sub-select/</link><description>Recent content in sub-select on dcrystalj</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Sat, 26 Mar 2022 23:24:04 +0200</lastBuildDate><atom:link href="https://www.tomazic.pro/tags/sub-select/index.xml" rel="self" type="application/rss+xml"/><item><title>Migrating sub-select MySQL query to Presto</title><link>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</link><pubDate>Sat, 26 Mar 2022 23:24:04 +0200</pubDate><guid>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</guid><description>When you have working SQL query there might not be so simple and straightforward it’s migration to Presto SQL. Recently I had a job to extract data from one table but with multiple added columns which requires sub-select. To demonstrate the problem and solution I have prepared simple user and location table where location entry represents where and where have users moved.
-User +----+-------+ | id | name | +----+-------+ | 1 | Tom | | 2 | Sally | | 3 | Ben | +----+-------+ Location +----+---------+-------------+----------------------+ | id | user_id | name | moved_on | +----+---------+-------------+----------------------+ | 1 | 1 | &amp;#39;New York&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 2 | 1 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 3 | 1 | &amp;#39;Miami&amp;#39; | &amp;#39;2012-1-1 00:00:00&amp;#39; | | 4 | 2 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 5 | 2 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 6 | 3 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 7 | 3 | &amp;#39;New York&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | +----+---------+-------------+----------------------+ Solution is using Presto’s window function</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sub-select on dcrystalj</title>
+    <link>https://www.tomazic.pro/tags/sub-select/</link>
+    <description>Recent content in sub-select on dcrystalj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 26 Mar 2022 23:24:04 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.tomazic.pro/tags/sub-select/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrating sub-select MySQL query to Presto</title>
+      <link>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</link>
+      <pubDate>Sat, 26 Mar 2022 23:24:04 +0200</pubDate>
+      
+      <guid>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</guid>
+      <description>When you have working SQL query there might not be so simple and straightforward it’s migration to Presto SQL. Recently I had a job to extract data from one table but with multiple added columns which requires sub-select. To demonstrate the problem and solution I have prepared simple user and location table where location entry represents where and where have users moved.
+User +----+-------+ | id | name | +----+-------+ | 1 | Tom | | 2 | Sally | | 3 | Ben | +----+-------+ Location +----+---------+-------------+----------------------+ | id | user_id | name | moved_on | +----+---------+-------------+----------------------+ | 1 | 1 | &amp;#39;New York&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 2 | 1 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 3 | 1 | &amp;#39;Miami&amp;#39; | &amp;#39;2012-1-1 00:00:00&amp;#39; | | 4 | 2 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 5 | 2 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 6 | 3 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 7 | 3 | &amp;#39;New York&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | +----+---------+-------------+----------------------+ Solution is using Presto’s window function</description>
+    </item>
+    
+  </channel>
+</rss>

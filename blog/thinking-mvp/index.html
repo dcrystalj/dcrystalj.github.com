@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Tomaž Tomažič">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.tomazic.pro/img/favicon.ico">
+    <title>Thinking Mvp | dcrystalj</title>
+    <meta name="description" content="MVP - Minimum Viable Product or ? Usually when I hear mvp people are thinking about Minimum Viable Product but this acronym can represent countless meanings like Most Valuable Person, Music Video Player or Model View Presenter so we should be careful with abbreviations.
+Let&rsquo;s just agree that we will talk about Minimum Viable Product from now on.
+When a product or customer comes to me and ask me to do a project, I always think about MVP.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <link rel="preload stylesheet" href="/css/main.min.css" as="style">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old">
+    
+    <link rel="stylesheet" href="/css/applause-button.css" />
+    <script src="/js/applause-button.js"></script>
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="https://www.tomazic.pro/css/vitae-skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.tomazic.pro/css/vitae-layout.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.tomazic.pro/css/sustain-main.css" />
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-LQJ8L15S31', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body>
+    <div id="content">
+  
+  <div class="container mb-3">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+            
+              <li class="nav-item">
+                <li><a class="nav-link" href="/blog/">BLOG</a></li>
+              </li>
+            
+              <li class="nav-item">
+                <li><a class="nav-link" href="/resume/">RESUME</a></li>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  
+    <div class="container">
+      <h3 class="mt-3"><b><a href="https://www.tomazic.pro/blog/thinking-mvp/">Thinking Mvp</a></b></h3>
+      <div class="blog-title my-4">
+
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <div class="blogpost">
+            <h1 id="mvp---minimum-viable-product-or-">MVP - Minimum Viable Product or ?</h1>
+<p>Usually when I hear mvp people are thinking about <code>Minimum Viable Product</code> but this acronym can represent countless meanings like <code>Most Valuable Person</code>, <code>Music Video Player</code> or <code>Model View Presenter</code> so we should be careful with abbreviations.</p>
+<p>Let&rsquo;s just agree that we will talk about <code>Minimum Viable Product</code> from now on.</p>
+<p>When a product or customer comes to me and ask me to do a project, I always think about <strong>MVP</strong>. Thinking about <strong>MVP</strong> can bring your project/feature faster to life, which can give you faster feedback from customers for possible improvements. This might also mean that project will start giving revenue faster. It brings you, as a developer more joy, because you are delivering something valuable faster and with less effort.
+This are some of the reasons why I am questioning every single feature or decision, if it can be simplified or even better, not implemented at all, at least not yet.</p>
+<p>There are some downsides to this approach. Sometimes It makes my life harder just because I have to make something to work in first sprint already, which can cause more changes and unnecessary pain in the second one. This is something to think upfront thoroughly to minimize self-induced pain or even longer overall project dev time compared to not doing mvp.</p>
+<h1 id="interview-example">Interview example</h1>
+<p>Once when I was preparing for interview, I have encountered to  the following task:</p>
+<blockquote>
+<p>Create web app where users can post comments.</p>
+</blockquote>
+<p>This statement is so vague so you should always ask in details what is really meant here. Does it need to be some html page where use can enter comments or is it just web api which can be used by other apps? Do we need to authenticate users or can it be anonymous ? What kind of comments are expected, plain text? What is the expected frequency and size of comments? How do we store them? &hellip;</p>
+<p>What pops into my mind as a real MVP is this.
+Create rest api for posting short (varchar) comments for one given <code>uid</code> (unique identifier which can represent website or location where comments are linked to) and save them into one file. Because we don&rsquo;t know how much will it be used yet, lets assume 5 comments per <code>uid</code> per year. We don&rsquo;t even need to create endpoint to fetch comments, but only to store them! If our stakeholders really need to get comments, we can just open ftp access to the files holding comments for them.</p>
+<h1 id="code">Code</h1>
+<p>Project code is available for download here <a href="https://github.com/dcrystalj/blog-code/tree/main/mvp">github</a></p>
+<p>MVP is not necessarily  just prototyping or writing junk code. We should still be practicing TDD. Our code will still be running in production, just with less features.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">url</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">flag</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;url&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;:8080&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;hostname:port&#34;</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000">path</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">flag</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;path&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;./db/comments&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;folder to save comments&#34;</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000">flag</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Parse</span><span style="color:#000;font-weight:bold">()</span>
+
+	<span style="color:#000">ctx</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">signal</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NotifyContext</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">context</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Background</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">os</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Interrupt</span><span style="color:#000;font-weight:bold">)</span>
+
+	<span style="color:#000">fc</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">services</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewFileCommenter</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000">srv</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">services</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewHttpServer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">url</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Input</span><span style="color:#000;font-weight:bold">)</span>
+
+	<span style="color:#000">fc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Init</span><span style="color:#000;font-weight:bold">()</span>
+	<span style="color:#000">srv</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Init</span><span style="color:#000;font-weight:bold">()</span>
+
+	<span style="color:#000">g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">gctx</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">errgroup</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithContext</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ctx</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000">g</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Go</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#204a87;font-weight:bold">error</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">fc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">gctx</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">})</span>
+	<span style="color:#000">g</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Go</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#204a87;font-weight:bold">error</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">srv</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">gctx</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">})</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">err</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">g</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Wait</span><span style="color:#000;font-weight:bold">();</span> <span style="color:#000">err</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">nil</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">err</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">context</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Canceled</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87">panic</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>Here you can see we have 2 concurrent routines. One for api server and one for writing to file. This is needed because if every request would open file and write to it we might have some concurrent writes which might produce some gibberish as a result. To avoid this issue, channel is used as a queue for comments which are then written to file one by one.</p>
+<p>Now all there it is to do is to deploy app and open ftp port to comments file. If usage of app will exceed expectations, we will know our app has some business value and we can start improving parts which are painful for users or better to say, improve parts which will bring more value to the world.</p>
+<h1 id="metrics">Metrics</h1>
+<p>MVP without metrics is useless. Why? If you don&rsquo;t have metrics, how will you know what to improve or what direction should your product take?</p>
+<h2 id="what-metrics">What metrics</h2>
+<p>If your decision (what to improve or throw away) will not be based on measured metrics, it is good indicator that your metrics are bad.</p>
+<p>In our example our metric is lines per file. This metric will give us insight how much our app is used. If we get 5 comments per year, maybe we should not change anything at all, but if we suddenly get 5000 comments per second, probably we should start thinking about high availability, exposing our api to multiple servers and shard our file to multiple locations on different servers.</p>
+<p>Another metric data in our app are server errors. They are logged in standard error output.</p>
+
+            
+            
+          </div>
+          <div class="blogpost__footer">
+            June 10, 2022
+            &nbsp;&nbsp;
+            
+              <span class="badge bg-success">mvp</span>
+            
+              <span class="badge bg-success">go</span>
+            
+              <span class="badge bg-success">file server</span>
+            
+          </div>
+        </div>
+        <div class="applause"><applause-button class="applause__button" url="https://www.tomazic.pro/blog/thinking-mvp/" color="#22a8a1"/></div>
+        <div class="disqus">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dcrystalj" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+    </div>
+  
+
+    </div>
+    
+    <footer class="footer">
+  <div class="container">
+    <div class="text-muted">&copy; All rights reserved 2022</div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+  </body>
+</html>

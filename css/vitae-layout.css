@@ -18,8 +18,30 @@
     text-decoration: none;
 }
 
-p, address {
+address {
     margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+blockquote {
+    background-color: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+blockquote:before {
+    color: #ccc;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+blockquote>p{
+    margin: 0;
 }
 
 .education__time i {
