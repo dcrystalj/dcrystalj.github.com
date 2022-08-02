@@ -1,73 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blogs on dcrystalj</title>
-    <link>https://www.tomazic.pro/blog/</link>
-    <description>Recent content in Blogs on dcrystalj</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 10 Jun 2022 08:06:29 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.tomazic.pro/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Thinking Mvp</title>
-      <link>https://www.tomazic.pro/blog/thinking-mvp/</link>
-      <pubDate>Fri, 10 Jun 2022 08:06:29 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/thinking-mvp/</guid>
-      <description>MVP - Minimum Viable Product or ? Usually when I hear mvp people are thinking about Minimum Viable Product but this acronym can represent countless meanings like Most Valuable Person, Music Video Player or Model View Presenter so we should be careful with abbreviations.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on dcrystalj</title><link>https://www.tomazic.pro/blog/</link><description>Recent content in Blogs on dcrystalj</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Sun, 31 Jul 2022 08:06:29 +0200</lastBuildDate><atom:link href="https://www.tomazic.pro/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Set-up multi node docker cluster with KIND</title><link>https://www.tomazic.pro/blog/setup-multi-node-docker-cluster-kind/</link><pubDate>Sun, 31 Jul 2022 08:06:29 +0200</pubDate><guid>https://www.tomazic.pro/blog/setup-multi-node-docker-cluster-kind/</guid><description>Why Because when playing with kubernetes locally, I would like to see more realistic scenarios of having multiple nodes. By default Kind comes with only one node.
+Setup Create ~/kind.yaml config (or whatever location you prefer). Set content to kind:ClusterapiVersion:kind.x-k8s.io/v1alpha4nodes:- role:control-planeextraPortMappings:- containerPort:30303hostPort:8881- role:workerextraPortMappings:- containerPort:30303hostPort:8882- role:workerextraPortMappings:- containerPort:30303hostPort:8883 Create new cluster with command kind create cluster --config ~/kind.yaml. Note that every change of config requires cluster recreation. To verify your setup run docker ps where you should see proper port mapping for each &amp;ldquo;node&amp;rdquo; which is actually one docker container.</description></item><item><title>Thinking Mvp</title><link>https://www.tomazic.pro/blog/thinking-mvp/</link><pubDate>Fri, 10 Jun 2022 08:06:29 +0200</pubDate><guid>https://www.tomazic.pro/blog/thinking-mvp/</guid><description>MVP - Minimum Viable Product or ? Usually when I hear mvp people are thinking about Minimum Viable Product but this acronym can represent countless meanings like Most Valuable Person, Music Video Player or Model View Presenter so we should be careful with abbreviations.
 Let&amp;rsquo;s just agree that we will talk about Minimum Viable Product from now on.
-When a product or customer comes to me and ask me to do a project, I always think about MVP.</description>
-    </item>
-    
-    <item>
-      <title>Migrating sub-select MySQL query to Presto</title>
-      <link>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</link>
-      <pubDate>Sat, 26 Mar 2022 23:24:04 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</guid>
-      <description>When you have working SQL query there might not be so simple and straightforward it’s migration to Presto SQL. Recently I had a job to extract data from one table but with multiple added columns which requires sub-select. To demonstrate the problem and solution I have prepared simple user and location table where location entry represents where and where have users moved.
-User +----+-------+ | id | name | +----+-------+ | 1 | Tom | | 2 | Sally | | 3 | Ben | +----+-------+ Location +----+---------+-------------+----------------------+ | id | user_id | name | moved_on | +----+---------+-------------+----------------------+ | 1 | 1 | &amp;#39;New York&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 2 | 1 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 3 | 1 | &amp;#39;Miami&amp;#39; | &amp;#39;2012-1-1 00:00:00&amp;#39; | | 4 | 2 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 5 | 2 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 6 | 3 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 7 | 3 | &amp;#39;New York&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | +----+---------+-------------+----------------------+ Solution is using Presto’s window function</description>
-    </item>
-    
-    <item>
-      <title>How to become a blockchain developer — the first thing</title>
-      <link>https://www.tomazic.pro/blog/become_blockchaing_developer/</link>
-      <pubDate>Thu, 28 Oct 2021 22:29:06 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/become_blockchaing_developer/</guid>
-      <description>tl;dr Blockchain A-Z™: Learn How To Build Your First Blockchain
-I passed some online courses and read a lot of resources to become blockchain developer, even 100x more expensive ones. The first thing you need is to get basic idea how blockchain works, what are its use cases and what are its limitations in order to understand documentation of blockchain you are interested in. Only after that you can develop smart contracts you need and Blockchain A-Z course will give you all of that: basic background and some idea about smart contracts on Etherium blockchain.</description>
-    </item>
-    
-    <item>
-      <title>Calculating Huge Number Modulo</title>
-      <link>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</link>
-      <pubDate>Fri, 22 Oct 2021 21:49:21 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</guid>
-      <description>I have stumbled upon a task to calculate modulo of 5 * (2¹⁰)¹⁸ where mod = 10⁹+7
+When a product or customer comes to me and ask me to do a project, I always think about MVP.</description></item><item><title>Migrating sub-select MySQL query to Presto</title><link>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</link><pubDate>Sat, 26 Mar 2022 23:24:04 +0200</pubDate><guid>https://www.tomazic.pro/blog/migrating-sub-select-mysql-query-to-presto/</guid><description>When you have working SQL query there might not be so simple and straightforward it’s migration to Presto SQL. Recently I had a job to extract data from one table but with multiple added columns which requires sub-select. To demonstrate the problem and solution I have prepared simple user and location table where location entry represents where and where have users moved.
+User +----+-------+ | id | name | +----+-------+ | 1 | Tom | | 2 | Sally | | 3 | Ben | +----+-------+ Location +----+---------+-------------+----------------------+ | id | user_id | name | moved_on | +----+---------+-------------+----------------------+ | 1 | 1 | &amp;#39;New York&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 2 | 1 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 3 | 1 | &amp;#39;Miami&amp;#39; | &amp;#39;2012-1-1 00:00:00&amp;#39; | | 4 | 2 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 5 | 2 | &amp;#39;Columbus&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | | 6 | 3 | &amp;#39;Miami&amp;#39; | &amp;#39;2010-1-1 00:00:00&amp;#39; | | 7 | 3 | &amp;#39;New York&amp;#39; | &amp;#39;2011-1-1 00:00:00&amp;#39; | +----+---------+-------------+----------------------+ Solution is using Presto’s window function</description></item><item><title>How to become a blockchain developer — the first thing</title><link>https://www.tomazic.pro/blog/become_blockchaing_developer/</link><pubDate>Thu, 28 Oct 2021 22:29:06 +0200</pubDate><guid>https://www.tomazic.pro/blog/become_blockchaing_developer/</guid><description>tl;dr Blockchain A-Z™: Learn How To Build Your First Blockchain
+I passed some online courses and read a lot of resources to become blockchain developer, even 100x more expensive ones. The first thing you need is to get basic idea how blockchain works, what are its use cases and what are its limitations in order to understand documentation of blockchain you are interested in. Only after that you can develop smart contracts you need and Blockchain A-Z course will give you all of that: basic background and some idea about smart contracts on Etherium blockchain.</description></item><item><title>Calculating Huge Number Modulo</title><link>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</link><pubDate>Fri, 22 Oct 2021 21:49:21 +0200</pubDate><guid>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</guid><description>I have stumbled upon a task to calculate modulo of 5 * (2¹⁰)¹⁸ where mod = 10⁹+7
 Using multiplication formula
 x * y % mod = ((x % mod) * (y % mod)) % mod
 we can first split our problem to
 (n % mod) * ((2 ¹⁰)¹⁸ % mod) % mod = X
 and then to
 (n % mod) * ((2 ¹⁰*¹⁸ % mod) % mod = X
-Modern programing languages like python can do this already in pow (exponent) function has third parameter for mod.</description>
-    </item>
-    
-    <item>
-      <title>Debugging C/C&#43;&#43; code in Visual Studio Code (VSC)</title>
-      <link>https://www.tomazic.pro/blog/debugging-vscode-cpp/</link>
-      <pubDate>Sat, 08 Sep 2018 21:03:56 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/debugging-vscode-cpp/</guid>
-      <description>I’ve been occupied with competitive programing a lot lately. For writing code I use Visual Studio Code because I am used to it from javascript and python world. To test code I write given input from competition task to in.txt file and then run custom task build.
+Modern programing languages like python can do this already in pow (exponent) function has third parameter for mod.</description></item><item><title>Debugging C/C++ code in Visual Studio Code (VSC)</title><link>https://www.tomazic.pro/blog/debugging-vscode-cpp/</link><pubDate>Sat, 08 Sep 2018 21:03:56 +0200</pubDate><guid>https://www.tomazic.pro/blog/debugging-vscode-cpp/</guid><description>I’ve been occupied with competitive programing a lot lately. For writing code I use Visual Studio Code because I am used to it from javascript and python world. To test code I write given input from competition task to in.txt file and then run custom task build.
 Steps needed for running/debugging: 1. install C/C++ extension. https://code.visualstudio.com/docs/languages/cpp
-2. Define task to build code. Go to Tasks &amp;gt; Configure tasks and choose your task to edit or create new one.</description>
-    </item>
-    
-  </channel>
-</rss>
+2. Define task to build code. Go to Tasks &amp;gt; Configure tasks and choose your task to edit or create new one.</description></item></channel></rss>

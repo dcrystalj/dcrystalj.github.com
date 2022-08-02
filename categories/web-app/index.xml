@@ -1,26 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>web-app on dcrystalj</title>
-    <link>https://www.tomazic.pro/categories/web-app/</link>
-    <description>Recent content in web-app on dcrystalj</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 10 Jun 2022 08:06:29 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.tomazic.pro/categories/web-app/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Thinking Mvp</title>
-      <link>https://www.tomazic.pro/blog/thinking-mvp/</link>
-      <pubDate>Fri, 10 Jun 2022 08:06:29 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/thinking-mvp/</guid>
-      <description>MVP - Minimum Viable Product or ? Usually when I hear mvp people are thinking about Minimum Viable Product but this acronym can represent countless meanings like Most Valuable Person, Music Video Player or Model View Presenter so we should be careful with abbreviations.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>web-app on dcrystalj</title><link>https://www.tomazic.pro/categories/web-app/</link><description>Recent content in web-app on dcrystalj</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Fri, 10 Jun 2022 08:06:29 +0200</lastBuildDate><atom:link href="https://www.tomazic.pro/categories/web-app/index.xml" rel="self" type="application/rss+xml"/><item><title>Thinking Mvp</title><link>https://www.tomazic.pro/blog/thinking-mvp/</link><pubDate>Fri, 10 Jun 2022 08:06:29 +0200</pubDate><guid>https://www.tomazic.pro/blog/thinking-mvp/</guid><description>MVP - Minimum Viable Product or ? Usually when I hear mvp people are thinking about Minimum Viable Product but this acronym can represent countless meanings like Most Valuable Person, Music Video Player or Model View Presenter so we should be careful with abbreviations.
 Let&amp;rsquo;s just agree that we will talk about Minimum Viable Product from now on.
-When a product or customer comes to me and ask me to do a project, I always think about MVP.</description>
-    </item>
-    
-  </channel>
-</rss>
+When a product or customer comes to me and ask me to do a project, I always think about MVP.</description></item></channel></rss>

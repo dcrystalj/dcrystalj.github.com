@@ -1,31 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>math on dcrystalj</title>
-    <link>https://www.tomazic.pro/tags/math/</link>
-    <description>Recent content in math on dcrystalj</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 22 Oct 2021 21:49:21 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.tomazic.pro/tags/math/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Calculating Huge Number Modulo</title>
-      <link>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</link>
-      <pubDate>Fri, 22 Oct 2021 21:49:21 +0200</pubDate>
-      
-      <guid>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</guid>
-      <description>I have stumbled upon a task to calculate modulo of 5 * (2¹⁰)¹⁸ where mod = 10⁹+7
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>math on dcrystalj</title><link>https://www.tomazic.pro/tags/math/</link><description>Recent content in math on dcrystalj</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Fri, 22 Oct 2021 21:49:21 +0200</lastBuildDate><atom:link href="https://www.tomazic.pro/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>Calculating Huge Number Modulo</title><link>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</link><pubDate>Fri, 22 Oct 2021 21:49:21 +0200</pubDate><guid>https://www.tomazic.pro/blog/calculating-huge-number-modulo/</guid><description>I have stumbled upon a task to calculate modulo of 5 * (2¹⁰)¹⁸ where mod = 10⁹+7
 Using multiplication formula
 x * y % mod = ((x % mod) * (y % mod)) % mod
 we can first split our problem to
 (n % mod) * ((2 ¹⁰)¹⁸ % mod) % mod = X
 and then to
 (n % mod) * ((2 ¹⁰*¹⁸ % mod) % mod = X
-Modern programing languages like python can do this already in pow (exponent) function has third parameter for mod.</description>
-    </item>
-    
-  </channel>
-</rss>
+Modern programing languages like python can do this already in pow (exponent) function has third parameter for mod.</description></item></channel></rss>
